@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class PartnersController extends Controller
+use App\Http\Requests\StoresRequest;
+use App\Models\Store;
+use Auth;
+use Session;
+class StoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +26,7 @@ class PartnersController extends Controller
      */
     public function create()
     {
-
+        return view('backoffice.partner.create');
     }
 
     /**
@@ -32,9 +35,21 @@ class PartnersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoresRequest $request)
     {
+        $stores = new Store;
+        $stores->user_id = Auth::id();
+        $stores->category_id = $request->category_id ;
+        $stores->store_name_th = $request->store_name_th;
+        $stores->store_name_en = $request->store_name_en;
+        $stores->address = $request->address;
+        $stores->coordinates = $request->coordinates;
+        $stores->tel = $request->tel;
+        $stores->status = 2; //อยู่่ระหว่างดำเนินการ
+        $stores->save();
 
+        Session::flash('success','สร้างร้านค้าเรียบร้อยแล้ว');
+        return redirect()->back();
     }
 
     /**
@@ -45,7 +60,8 @@ class PartnersController extends Controller
      */
     public function show($id)
     {
-        //
+        $store = Store::findOrFail($id);
+        return view('backoffice.store.detail',compact('store'));
     }
 
     /**

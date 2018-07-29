@@ -22,7 +22,11 @@
                         <li><a href="my-account.html"><i class="fa fa-angle-right"></i>My Account</a></li>
                         <li><a href="wishlist.html"><i class="fa fa-angle-right"></i>Wishlist</a></li>
                         <li><a href="cart.html"><i class="fa fa-angle-right"></i>My Cart</a></li>
-                        <li><a href="{{ route('partner-create') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
+                        @guest
+                            <li><a href="{{ route('partner-create') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
+                        @else
+                            <li><a href="{{ url('main') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
+                        @endif
                     </ul>
                 </div><!-- end col -->
                 <div class="col-sm-3">

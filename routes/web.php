@@ -45,6 +45,10 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
 Auth::routes();
 
 Route::get('/homepage', 'HomeController@index')->name('homepage');
+//Main
+Route::get('/dashboards', function () {
+    return view('backoffice.index');
+});
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Member , User  , Partner
@@ -77,6 +81,26 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
         'uses' => 'PartnersController@index',
         'as' => 'partner.my-partner'
     ]);
+
+    //สร้างร้านค้าใหม่
+    Route::get('new-store-partner',[
+        'uses' => 'StoresController@create',
+        'as' => 'partner.new-store'
+    ]);
+
+    //บันทึกร้านค้า
+    Route::post('save-store',[
+        'uses' => 'StoresController@store',
+        'as' => 'partner.save-store'
+    ]);
+
+    //รายละเอียดร้าน้า
+    Route::get('store-detail/{id}',[
+        'uses' => 'StoresController@show',
+        'as' => 'partner.store-detail'
+    ]);
+
+
 });
 
 Route::group(['prefix'=>'member','middleware'=>'auth'],function(){
