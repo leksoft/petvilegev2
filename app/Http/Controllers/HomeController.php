@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+       // $this->middleware('auth');
     }
 
     /**
@@ -21,10 +22,24 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //admin
     public function index()
     {
-        return view('home.index');
+
+
+        if (Auth::user()->role_id == 1) { // 1 = admin
+            return view('backoffice.index');
+
+        } elseif (Auth::user()->role_id == 2) {  // 2 = member
+            return view('home.index');
+
+        } elseif (Auth::user()->role_id == 3) { // 3 = partner
+            return view('backoffice.partner');
+
+        }
+
     }
 
-   
+
 }

@@ -13,7 +13,7 @@ class PartnersController extends Controller
      */
     public function index()
     {
-        //
+        return view('backoffice.partner');
     }
 
     /**

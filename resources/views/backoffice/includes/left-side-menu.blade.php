@@ -114,7 +114,6 @@
                     <ul class="list-unstyled">
                         <li><a href="url.html">ประเภทสมาชิก</a></li>
                         <li><a href="url.html">ประเภทสัตว์เลี้ยง</a></li>
-
                     </ul>
                 </li>
             @endif

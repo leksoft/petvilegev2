@@ -47,7 +47,7 @@ class PagesController extends Controller
         Auth::loginUsingId($user->id);
 
 
-        return redirect()->route('homepage');
+        return redirect()->route('partner.main');
     }
 
 

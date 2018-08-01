@@ -46,9 +46,10 @@ Auth::routes();
 
 Route::get('/homepage', 'HomeController@index')->name('homepage');
 //Main
-Route::get('/dashboards', function () {
-    return view('backoffice.index');
-});
+Route::get('/dashboards',[
+        'uses' => 'HomeController@index',
+        'as' => 'dashboards'
+]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Member , User  , Partner
@@ -76,7 +77,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 });
 
 Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
-    
+
+    Route::get('partner-main',[
+        'uses' => 'PartnersController@index',
+        'as' => 'partner.main'
+    ]);
+
     Route::get('my-partner',[
         'uses' => 'PartnersController@index',
         'as' => 'partner.my-partner'
