@@ -22,7 +22,6 @@ Route::post('member-create',[
     'as' => 'member-create'
 ]);
 
-
 /**
  * End Member
  */
@@ -87,7 +86,6 @@ Route::get('edit-profile/{id}',[
 ]);
 //Update Profile
 Route::patch('member/update/{id}','MembersController@updateprofile');
-
 
 //Main
 Route::get('/main', function () {
