@@ -113,19 +113,18 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <h5>ฝากร้านกับเพจวิเลจ</h5>
+                        <h5 class="text-center">ฝากร้านกับเพจวิเลจ</h5>
                     </div><!-- end modal-header -->
                     <div class="modal-body">
                         <div class="row">
                    
                             <div class="col-sm-12">
                        
-                                <h4 class="text-primary">เลือกประเภทบัญชี</h4>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                                <hr class="spacer-10">
-                                <ul class="list list-inline">
-                                    <li><button type="button" class="btn btn-default btn-md round"><i class="fa fa-shopping-basket mr-5"></i>Add to Cart</button></li>
-                                    <li><button type="button" class="btn btn-gray btn-md round"><i class="fa fa-heart mr-5"></i>Add to Wishlist</button></li>
+                                <h4 class="text-primary text-center">เลือกประเภทบัญชี</h4>
+                           
+                                <ul class="list list-inline text-center">
+                                    <li><a href = "{{ route('partner-create') }}"><button type="button" class="btn btn-default round btn-lg">บุคคลธรรมดา</button></a></li>
+                                    <li><a href = "{{ route('partner-company') }}"><button type="button" class="btn btn-pinterest round btn-lg">นิติบุคคล</button><a/></li>
                                 </ul>
                             </div>
                         </div>

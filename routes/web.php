@@ -1,6 +1,7 @@
 <?php
-
-
+Route::get('/homepage', function () {
+    return view('home.index');
+});
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -34,17 +35,28 @@ Route::post('member-create',[
 
 Route::get('/partner', 'HomeController@partner')->name('partner');
 Route::get('/partner-select', 'HomeController@partnerselect')->name('partner-select');
-//Register Partner
+//Register Partner บุคคลธรรมดา
 Route::get('partner-create',[
     'uses' => 'PagesController@partnerCreate',
     'as' => 'partner-create'
 ]);
+//Register Partner นิติบุคคล
+Route::get('partner-company',[
+    'uses' => 'PagesController@partnerCreateCompany',
+    'as' => 'partner-company'
+]);
 
-//Save Partner
+//Save Partner person
 Route::post('partner-store',[
     'uses' => 'PagesController@partnerStore',
     'as' => 'partner-store'
 ]);
+//Save Partner company
+Route::post('company-store',[
+    'uses' => 'PagesController@companyStore',
+    'as' => 'company-store'
+]);
+
 
 /**
  * End Partner
@@ -56,7 +68,7 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
 
 Auth::routes();
 
-Route::get('/homepage', 'HomeController@index')->name('homepage');
+
 //Main
 Route::get('/dashboards',[
         'uses' => 'HomeController@index',

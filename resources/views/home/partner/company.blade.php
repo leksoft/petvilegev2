@@ -20,9 +20,22 @@
 
                     <div class="row">
                         <div class="col-sm-12 col-md-10 col-lg-12">
-                            <form method="POST" action="{{ route('partner-store') }}" aria-label="{{ __('Create Partner') }}"
+                            <form method="POST" action="{{ route('company-store') }}" aria-label="{{ __('Create Partner') }}"
                                   class="form-horizontal">
                                 @csrf
+                                <div class="form-group{{ $errors->has('corporation_name') ? ' has-error' : '' }}">
+                                        <label for="corporation_name" class="col-sm-2 control-label">ชื่อนิติบุคคล</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control input-md" id="corporation_name" name="corporation_name"
+                                                   placeholder="ชื่อนิติบุคคล" value="{{ old('corporation_name') }}">
+                                            @if ($errors->has('corporation_name'))
+                                                <span class="help-block" role="alert">
+                                                {{ $errors->first('corporation_name') }}
+                                            </span>
+                                            @endif
+                                        </div>
+                                    </div><!-- end form-group -->
+
                                 <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
                                     <label for="firstname" class="col-sm-2 control-label">ชื่อ</label>
                                     <div class="col-sm-10">
