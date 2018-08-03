@@ -25,7 +25,9 @@
                         @guest
                             <li><a href="{{ route('partner') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
                         @else
-                            <li><a href="{{ url('main') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
+                            @if(Auth::user()->role_id == 3)
+                            <li><a href="{{ route('partner.main') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
+                            @endif
                         @endif
                     </ul>
                 </div><!-- end col -->

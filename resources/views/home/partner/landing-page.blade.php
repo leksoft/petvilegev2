@@ -101,12 +101,10 @@
                 </div><!-- end row -->
             </div><!-- end box-banner-wide -->
         </div><!-- end container -->
-    </section>
-    <!-- end section -->
+</section><!-- end section -->
 
-
-      <!-- Modal Product Quick View -->
-      <div class="modal fade QuickView" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <!-- Modal Quick View -->
+    <div class="modal fade QuickView" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -131,5 +129,5 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
 @stop

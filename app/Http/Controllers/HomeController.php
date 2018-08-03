@@ -28,7 +28,8 @@ class HomeController extends Controller
     //admin
     public function index()
     {
-        return view('backoffice.index');
+        return view('home.index');
+        //return view('backoffice.index');
     }
 
     public function partner(){
