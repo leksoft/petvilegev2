@@ -16,7 +16,7 @@ class HomeController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -28,22 +28,21 @@ class HomeController extends Controller
     //admin
     public function index()
     {
-
-
-    if (Auth::user()->role_id == 1) { // 1 = admin
         return view('backoffice.index');
+    }
 
-    } elseif (Auth::user()->role_id == 2) {  // 2 = member
-        return view('home.index');
+    public function partner(){
+        return view('home.partner.landing-page');
+    }
 
-    } elseif (Auth::user()->role_id == 3) { // 3 = partner
-        return view('backoffice.partner');
-        //backoffice
-
+    //เลือกประเภทบัญชี
+    public function partnerselect(){
+        return view('home.partner.select');
     }
 
 
-
+    public function member(){
+        return view('home.index');
     }
 
 

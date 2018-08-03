@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('auth.login');
@@ -20,12 +10,30 @@ Route::get('last',function(){
 
     dd($user->id);
 });
+
+/**
+ * Member
+ */
+
 //Register  Member 
 Route::post('member-create',[
     'uses' => 'Auth\RegisterController@store',
     'as' => 'member-create'
 ]);
 
+
+/**
+ * End Member
+ */
+
+
+/**
+ * 
+ * Partner
+ */
+
+Route::get('/partner', 'HomeController@partner')->name('partner');
+Route::get('/partner-select', 'HomeController@partnerselect')->name('partner-select');
 //Register Partner
 Route::get('partner-create',[
     'uses' => 'PagesController@partnerCreate',
@@ -37,6 +45,10 @@ Route::post('partner-store',[
     'uses' => 'PagesController@partnerStore',
     'as' => 'partner-store'
 ]);
+
+/**
+ * End Partner
+ */
 
 Route::get('facebook/login', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
