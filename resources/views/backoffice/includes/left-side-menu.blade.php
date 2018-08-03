@@ -31,7 +31,9 @@
                                 class="ti-light-bulb"></i><span> Partner/Store </span> <span class="menu-arrow"></span>
                     </a>
                     <ul class="list-unstyled">
+
                         <li><a href="{{ route('partner.new-store') }}">สร้างร้านค้าใหม่</a></li>
+
                         <li><a href="url.html">ข้อมูลเจ้าของร้านค้า</a></li>
                         <li><a href="">ข้อมูลรายละเอียดร้านค้า</a></li>
                         <li><a href="url.html">ข้อมูลดีล</a></li>
