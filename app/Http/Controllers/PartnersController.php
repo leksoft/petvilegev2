@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Models\Profile;
 use Auth;
+use App\Models\Store;
 class PartnersController extends Controller
 {
     public function __construct()
@@ -28,7 +29,8 @@ class PartnersController extends Controller
  *  List Store
  */
     public function storeList(){
-        return view('backoffice.partner.store-list');
+        $stores = Store::whereRaw('user_id = ?',[Auth::id()])->get();
+        return view('backoffice.partner.store-list',compact('stores'));
     }
 
 /**

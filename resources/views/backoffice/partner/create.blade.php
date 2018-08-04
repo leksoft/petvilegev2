@@ -2,6 +2,7 @@
 @section('content')
 <div class="wrapper">
     <div class="container-fluid">
+        @if(Auth::user()->status == 0)
                 <!-- Page-Title -->
                 <div class="row">
                         <div class="col-sm-12">
@@ -12,13 +13,39 @@
                                         <li class="breadcrumb-item active">ร้านค้า</li>
                                     </ol>
                                 </div>
-                            <h4 class="page-title">สร้างร้านค้าของคุณ</h4>
+                                <div class="card m-b-20 text-white bg-danger text-xs-center">
+                                
+                                        <div class="card-body">
+                                            <h4 class="card-title">คุณไม่สามารถสร้างร้านค้าได้ กรุณา ยืนยันบัญชี ก่อนนะคะ</h4>
+                                            
+                                        <a href="{{ route('partner.account') }}" class="btn btn-info">ยืนยันบัญชี</a>
+                                        </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- end page title end breadcrumb -->
+           
 
-            <div class="row">
+            @else
+    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="btn-group pull-right">
+                                    <ol class="breadcrumb hide-phone p-0 m-0">
+                                      
+                                        <li class="breadcrumb-item active">ร้านค้า</li>
+                                    </ol>
+                                </div>
+                            <h4 class="page-title">สร้างร้านค้าของคุณ</h4>
+                           
+        
+                            </div>
+                        </div>
+    </div>
+                    <!-- end page title end breadcrumb -->
+
+    <div class="row">
                 <div class="col-12">
                     <div class="card-box">
                    
@@ -140,6 +167,8 @@
             </div>
             <!-- end row -->
     </div>
+
+    @endif
 </div>
 
 @stop

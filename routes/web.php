@@ -122,6 +122,12 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
     ]);
 
 
+    //ยืนยันตัวตน
+    Route::get('verify/{id}',[
+        'uses' => 'MembersController@verify',
+        'as' => 'partner.verify'
+    ]);
+
     //สร้างร้านค้าใหม่
     Route::get('new-store-partner',[
         'uses' => 'StoresController@create',

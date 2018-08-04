@@ -63,18 +63,39 @@
                         <h4 class="m-t-0 m-b-20 header-title">ยืนยันบัตรประจำตัวประชาชน</h4>
 
                         <div class="p-b-10">
-                          
+                           
+                            @if(Auth::user()->verify_id_card_file == NULL)
                             <div class="alert alert-danger" role="alert">
                                     <p>ยังไม่ยืนยัน</p>
                             </div>
+                            @else
+                                @if(Auth::user()->status == 0)
+                                    <h4 class="text-danger">  ยังไม่ยืนยันตัวตน </h4>
+                                @elseif(Auth::user()->status == 1)
+                                    <h4 class="text-success">  อนุมัติ </h4>
+                                @elseif(Auth::user()->status == 2)
+                                <h4 class="text-warning">  อยู่ในระหว่างการตรวจสอบ </h4>
+                                @endif
+                            @endif
                         </div>
                         <h4 class="m-t-0 m-b-20 header-title">ยืนยันบัญชีธนาคาร</h4>
 
                         <div class="p-b-10">
                           
-                            <div class="alert alert-danger" role="alert">
-                                    <p>ยังไม่ยืนยัน</p>
-                            </div>
+                                @if(Auth::user()->verify_bank_file == NULL)
+                                <div class="alert alert-danger" role="alert">
+                                        <p>ยังไม่ยืนยัน</p>
+                                </div>
+                                @else
+    
+                                    @if(Auth::user()->status == 0)
+                                        <h4 class="text-danger">  ยังไม่ยืนยันตัวตน </h4>
+                                    @elseif(Auth::user()->status == 1)
+                                        <h4 class="text-success">  อนุมัติ </h4>
+                                    @elseif(Auth::user()->status == 2)
+                                    <h4 class="text-warning">  อยู่ในระหว่างการตรวจสอบ </h4>
+                                    @endif
+                                @endif
                         </div>
                     </div>
 
@@ -223,7 +244,7 @@
                                            
                                            
                         
-                                            <form action="{{ url('partner/update/'.$user->id) }}" method = "post" class="form-horizontal form-bordered" enctype ="multipart/form-data">
+                                            <form action="{{ url('partner/verify/'.$user->id) }}" method = "post" class="form-horizontal form-bordered" enctype ="multipart/form-data">
                                                 <input type = "hidden" name = "user_id" value ="{{ $user->id }}"/>
                                                         {{ csrf_field() }}
                                                         {{ method_field('PATCH') }} 

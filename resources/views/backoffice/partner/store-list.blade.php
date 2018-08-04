@@ -34,45 +34,35 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Minton Admin v1</td>
-                                <td>01/01/2017</td>
-                                <td><span class="badge badge-info">Released</span></td>
-                                <td>จัดการร้านค้า</td>
-                                
-                               
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Minton Frontend v1</td>
-                                <td>01/01/2017</td>
-                                <td><span class="badge badge-success">Released</span></td>
-                                <td>จัดการร้านค้า</td>
-                               
-                               
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Minton Admin v1.1</td>
-                                <td>01/05/2017</td>
-                                <td><span class="badge badge-pink">Pending</span></td>
-                                <td>จัดการร้านค้า</td>
-                                
-                                
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Minton Frontend v1.1</td>
-                                <td>01/01/2017</td>
-                                <td><span class="badge badge-purple">Work in Progress</span>
-                                <td>จัดการร้านค้า</td>
-                               
-                                </td>
-                                
-                            </tr>
-                           
-
+                                @if($stores->count() > 0)
+                                @foreach ($stores as $store)
+                                <tr>
+                                        <td>{{ $store->id }}</td>
+                                        <td>{{ $store->store_name_th }}</td>
+                                        <td>{{ $store->created_at}}</td>
+                                        <td>
+                                            @if($store->status == 0)
+                                                <span class="badge badge-info">ล้มเหลว</span>
+                                            @elseif($store->status == 1)
+                                                <span class="badge badge-success">ล้มเหลว</span>
+                                            @elseif($store->status == 2)
+                                                <span class="badge badge-warning">อยู่ในระหว่างดำเนินการ</span>
+                                            @endif
+                                            
+                                        </td>
+                                        <td><a href = "">จัดการร้านค้า</a></td>
+                                        
+                                       
+                                </tr>
+                                @endforeach
+                                @else
+                                <tr>
+                                        <td colspan="5">คุณยังไม่ได้สร้างร้านค้าแรก</td>
+                                      
+                                    </tr>
+                                @endif
+                            
+                            
                             </tbody>
                         </table>
                     </div>
