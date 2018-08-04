@@ -86,6 +86,7 @@ Route::get('edit-profile/{id}',[
 ]);
 //Update Profile
 Route::patch('member/update/{id}','MembersController@updateprofile');
+Route::patch('partner/update/{id}','MembersController@updateprofilepartner');
 
 //Main
 Route::get('/main', function () {
@@ -109,6 +110,17 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
         'uses' => 'PartnersController@index',
         'as' => 'partner.my-partner'
     ]);
+
+    Route::get('store-list',[
+        'uses' => 'PartnersController@storeList',
+        'as' => 'partner.store-list'
+    ]);
+
+    Route::get('account',[
+        'uses' => 'PartnersController@account',
+        'as' => 'partner.account'
+    ]);
+
 
     //สร้างร้านค้าใหม่
     Route::get('new-store-partner',[

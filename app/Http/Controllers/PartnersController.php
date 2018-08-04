@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
+use App\Models\Profile;
+use Auth;
 class PartnersController extends Controller
 {
     public function __construct()
@@ -18,9 +20,24 @@ class PartnersController extends Controller
      */
     public function index()
     {
-        return view('layouts.partner.template-partner');
+        return view('backoffice.partner.content');
         //return view('backoffice.partner');
     }
+
+/**
+ *  List Store
+ */
+    public function storeList(){
+        return view('backoffice.partner.store-list');
+    }
+
+/**
+ *  Profile
+ */
+public function account(){
+    $user = User::with('profile')->findOrFail(Auth::id());
+    return view('backoffice.partner.account',compact('user'));
+}
 
     /**
      * Show the form for creating a new resource.

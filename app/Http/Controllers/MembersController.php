@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PartnerProfileRequest;
 use App\User;
 use App\Models\Profile;
 use Session;
@@ -58,6 +59,77 @@ class MembersController extends Controller
             $profiles->mailaddress = $request->mailaddress;
             $profiles->phone = $request->phone;
             $profiles->avatar = $request->avatar;
+            $profiles->wallet = $request->wallet;
+            $profiles->point = $request->point;
+            $profiles->referral = $request->referral;
+
+            //upload image
+            if ($request->hasFile('avatar')) {
+                //delete file            
+                if ($profiles->avatar != NULL) {
+                    File::delete(public_path('uploads/profiles/'.$profiles->avatar));
+                    File::delete(public_path('uploads/profiles/resize/'.$profiles->picture));
+                }
+                
+                $newfilename = str_random(10).'.'.
+                $request->file('avatar')->getClientOriginalExtension();
+                $request->file('avatar')->move(public_path().'/uploads/profiles/', $newfilename);
+                //resize image
+                Image::make(public_path('uploads/profiles/'.$newfilename))->resize(128,128)->save(public_path('uploads/profiles/resize/'.$newfilename));
+                
+                $profiles->avatar = $newfilename;
+            }else{
+                $profiles->avatar = $profiles->avatar; //ชื่อเดิม
+            }
+
+
+            $profiles->save();
+
+        } else {
+            $profiles = new Profile();
+            $profiles->firstname = $request->firstname;
+            $profiles->lastname = $request->lastname;
+            $profiles->user_id = $id;
+            $profiles->sex = $request->sex;
+            $profiles->birthdate = $request->birthdate;
+            $profiles->address = $request->address;
+            $profiles->mailaddress = $request->mailaddress;
+            $profiles->phone = $request->phone;
+            $profiles->wallet = $request->wallet;
+            $profiles->point = $request->point;
+            $profiles->referral = $request->referral;
+
+            $profiles->save();
+
+        }
+
+
+
+        Session::flash('success','แก้ไขข้อมูลส่วนตัวเรียบร้อยแล้ว');
+        return redirect()->back();
+    }
+
+    public function updateprofilepartner(PartnerProfileRequest $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        
+        $user->save();
+        
+        $profiles = Profile::whereRaw('user_id = ?',[$id])->first();
+
+        if (isset($profiles)) {
+            $profiles->firstname = $request->firstname;
+            $profiles->lastname = $request->lastname;
+            $profiles->user_id = $id;
+            $profiles->sex = $request->sex;
+            $profiles->birthdate = $request->birthdate;
+            $profiles->address = $request->address;
+            $profiles->mailaddress = $request->mailaddress;
+            $profiles->phone = $request->phone;
             $profiles->wallet = $request->wallet;
             $profiles->point = $request->point;
             $profiles->referral = $request->referral;

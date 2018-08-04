@@ -1,18 +1,27 @@
-@extends('layouts.admin')
+@extends('layouts.partner.template-partner')
 @section('content')
-        <div class="container-fluid">
-
-
-
+<div class="wrapper">
+    <div class="container-fluid">
+                <!-- Page-Title -->
+                <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="btn-group pull-right">
+                                    <ol class="breadcrumb hide-phone p-0 m-0">
+                                      
+                                        <li class="breadcrumb-item active">ร้านค้า</li>
+                                    </ol>
+                                </div>
+                            <h4 class="page-title">สร้างร้านค้าของคุณ</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title end breadcrumb -->
 
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <h4 class="m-t-0 header-title">สร้างร้านค้าของคุณ</h4>
-                        <p class="text-muted m-b-30 font-14">
-
-                        </p>
-
+                   
                         <div class="row">
                             <div class="col-12">
                                 <div class="p-20">
@@ -20,7 +29,7 @@
                                         @csrf
                                         <div class="form-group row{{ $errors->has('category_id') ? ' has-error' : '' }}" method="POST" action="{{ route('partner-store') }}">
                                             <label class="col-2 col-form-label">หมวดหมู่ร้านค้า<span class="text-danger">*</span></label>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <select class="form-control"  name = "category_id" value="{{ old('category_id') }}">
                                                     <option value="0">---เลือกหมวดหมู่---</option>
                                                     <option value="1">รักษาสัตว์</option>
@@ -43,7 +52,7 @@
 
                                         <div class="form-group row{{ $errors->has('store_name_th') ? ' has-error' : '' }}">
                                             <label class="col-2 col-form-label">ชื่อร้านภาษาไทย<span class="text-danger">*</span></label>
-                                            <div class="col-10">
+                                            <div class="col-md-6">
                                                 <input type="text" class="form-control"  name = "store_name_th" value="{{ old('store_name_th') }}">
                                                 @if ($errors->has('store_name_th'))
                                                     <span class="text-danger" role="alert">
@@ -54,7 +63,7 @@
                                         </div>
                                         <div class="form-group row{{ $errors->has('store_name_en') ? ' has-error' : '' }}">
                                             <label class="col-2 col-form-label">ชื่อร้านภาษาอังกฤษ<span class="text-danger">*</span></label>
-                                            <div class="col-10">
+                                            <div class="col-md-6">
                                                 <input type="text" class="form-control"  name = "store_name_en" value="{{ old('store_name_en') }}">
                                                 @if ($errors->has('store_name_en'))
                                                     <span class="text-danger" role="alert">
@@ -66,14 +75,14 @@
 
                                         <div class="form-group row">
                                             <label class="col-2 col-form-label" for="">เอกสารเกี่ยวกับร้านค้า</label>
-                                            <div class="col-10">
+                                            <div class="col-md-6">
                                                 <input type="file" id="doc_file" name="doc_file" class="form-control" placeholder="" value="{{ old('doc_file') }}">
                                             </div>
                                         </div>
 
                                         <div class="form-group row{{ $errors->has('address') ? ' has-error' : '' }}">
                                             <label class="col-2 col-form-label">ที่อยู่ร้านค้า <span class="text-danger">*</span></label>
-                                            <div class="col-10">
+                                            <div class="col-md-6">
                                                 <textarea class="form-control" rows="5" id = "address" name = "address" value="{{ old('address') }}"></textarea>
                                                 @if ($errors->has('address'))
                                                     <span class="text-danger" role="alert">
@@ -104,7 +113,7 @@
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-2 col-form-label" for="">รูปภาพร้านค้า</label>
-                                            <div class="col-10">
+                                            <div class="col-6">
                                                 <input type="file" id="image_store" name="image_store" class="form-control" placeholder="" value="{{ old('image_store') }}">
                                             </div>
                                         </div>
@@ -130,6 +139,8 @@
                 </div><!-- end col -->
             </div>
             <!-- end row -->
+    </div>
+</div>
 
 @stop
 

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PartnerRequest extends FormRequest
+class PartnerProfileRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class PartnerRequest extends FormRequest
         return [
             'firstname' => 'required|string|max:100',
             'lastname' => 'required|string|max:100',
-           // 'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ];
     }
@@ -35,7 +35,7 @@ class PartnerRequest extends FormRequest
         return [
             'firstname.required' => 'โปรดระบุชื่อ',
             'lastname.required' => 'โปรดระบุนามสกุล',
-            //'email.required' => 'โปรดระบุอีเมล',
+            'email.required' => 'โปรดระบุอีเมล',
             'password.required' => 'โปรดระบุรหัสผ่าน',
         ];
     }
