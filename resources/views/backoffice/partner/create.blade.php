@@ -54,14 +54,14 @@
                                 <div class="p-20">
                                     <form class="form-horizontal" role="form" method="POST" action="{{ route('partner.save-store') }}">
                                         @csrf
-                                        <div class="form-group row{{ $errors->has('category_id') ? ' has-error' : '' }}" method="POST" action="{{ route('partner-store') }}">
+                                        <div class="form-group row{{ $errors->has('category_id') ? ' has-error' : '' }}">
                                             <label class="col-2 col-form-label">หมวดหมู่ร้านค้า<span class="text-danger">*</span></label>
                                             <div class="col-md-6">
                                                 <select class="form-control"  name = "category_id" value="{{ old('category_id') }}">
                                                     <option value="0">---เลือกหมวดหมู่---</option>
                                                     <option value="1">รักษาสัตว์</option>
                                                     <option value="2">กรูมมิ่ง</option>
-                                                    <option value="3">รักฝากสัตว์</option>
+                                                    <option value="3">รับฝากสัตว์</option>
                                                     <option value="4">กิจกรรมสัตว์</option>
                                                     <option value="5">สินค้้า</option>
                                                     <option value="6">บริการอื่นๆ</option>

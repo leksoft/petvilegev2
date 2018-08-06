@@ -1,7 +1,9 @@
 <?php
+
 Route::get('/homepage', function () {
     return view('home.index');
 });
+
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -32,13 +34,15 @@ Route::post('member-create',[
  * Partner
  */
 
-Route::get('/partner', 'HomeController@partner')->name('partner');
+Route::get('/partners', 'HomeController@partner')->name('partners');
 Route::get('/partner-select', 'HomeController@partnerselect')->name('partner-select');
+
 //Register Partner บุคคลธรรมดา
 Route::get('partner-create',[
     'uses' => 'PagesController@partnerCreate',
     'as' => 'partner-create'
 ]);
+
 //Register Partner นิติบุคคล
 Route::get('partner-company',[
     'uses' => 'PagesController@partnerCreateCompany',
@@ -50,6 +54,7 @@ Route::post('partner-store',[
     'uses' => 'PagesController@partnerStore',
     'as' => 'partner-store'
 ]);
+
 //Save Partner company
 Route::post('company-store',[
     'uses' => 'PagesController@companyStore',
@@ -73,6 +78,7 @@ Route::get('/dashboards',[
         'uses' => 'HomeController@index',
         'as' => 'dashboards'
 ]);
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Member , User  , Partner
@@ -80,10 +86,12 @@ Route::get('my-account',[
     'uses' => 'MembersController@myaccount',
     'as' => 'members.my-account'
 ]);
+
 Route::get('edit-profile/{id}',[
     'uses' => 'MembersController@editprofile',
     'as' => 'members.edit-profile'
 ]);
+
 //Update Profile
 Route::patch('member/update/{id}','MembersController@updateprofile');
 Route::patch('partner/update/{id}','MembersController@updateprofilepartner');
@@ -121,8 +129,8 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
         'as' => 'partner.account'
     ]);
 
-
-    //ยืนยันตัวตน
+    //ยืนยันตัวตน ****
+    Route::patch('partner/update/{id}','MembersController@updateprofilepartner');
     Route::get('verify/{id}',[
         'uses' => 'MembersController@verify',
         'as' => 'partner.verify'
@@ -146,10 +154,53 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
         'as' => 'partner.store-detail'
     ]);
 
+    /**
+     * 
+     * Deal
+     */
+       //สร้างดีลใหม่
+    Route::get('create-deal',[
+        'uses' => 'DealsController@create',
+        'as' => 'partner.new-deal'
+    ]);
+     //บันทึกดีลใหม่
+     Route::post('save-deal',[
+        'uses' => 'DealsController@store',
+        'as' => 'partner.save-deal'
+    ]);
+
+     //แสดงรายการดีล
+     Route::post('deal-list',[
+        'uses' => 'DealsController@list',
+        'as' => 'partner.deal-list'
+    ]);
+
+
+
+
+    /**
+     * 
+     * Coupons
+     */
+       //สร้างคูปองใหม่
+       Route::get('create-coupon',[
+        'uses' => 'CouponsController@create',
+        'as' => 'partner.new-coupon'
+    ]);
+     //บันทึกคูปองใหม่
+     Route::post('save-coupon',[
+        'uses' => 'CouponsController@store',
+        'as' => 'partner.save-coupon'
+    ]);
+
+      //แสดงรายการคูปอง
+      Route::post('coupon-list',[
+        'uses' => 'DealsController@list',
+        'as' => 'partner.coupon-list'
+    ]);
 
 });
 
 Route::group(['prefix'=>'member','middleware'=>'auth'],function(){
-
 
 });

@@ -37,14 +37,13 @@
 
             <div class="col-lg-3 col-md-6">
                 <div class="widget-simple text-center card-box">
-                   
-                    <h3>สร้างดีล</h3>
+                    <a href = "{{ route('partner.new-deal')}}"><h3>สร้างดีล</h3></a>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6">
                 <div class="widget-simple text-center card-box">
-                    <h3>สร้างคูปอง</h3>
+                    <a href = "{{ route('partner.new-coupon')}}"><h3>สร้างคูปอง</h3></a>
                 </div>
             </div>
         </div>

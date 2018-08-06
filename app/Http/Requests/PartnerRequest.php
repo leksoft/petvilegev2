@@ -37,6 +37,8 @@ class PartnerRequest extends FormRequest
             'lastname.required' => 'โปรดระบุนามสกุล',
             //'email.required' => 'โปรดระบุอีเมล',
             'password.required' => 'โปรดระบุรหัสผ่าน',
+            //'unique'=>'อีเมล์นี้มีการใช้งานไปแล้ว',
+            //'regex'=>'Password must contain at least 1 letter and 1 number'
         ];
     }
 }

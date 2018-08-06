@@ -23,7 +23,7 @@
                         <li><a href="wishlist.html"><i class="fa fa-angle-right"></i>Wishlist</a></li>
                         <li><a href="cart.html"><i class="fa fa-angle-right"></i>My Cart</a></li>
                         @guest
-                            <li><a href="{{ route('partner') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
+                            <li><a href="{{ route('partners') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
                         @else
                             @if(Auth::user()->role_id == 3)
                             <li><a href="{{ route('partner.main') }}"><i class="fa fa-angle-right"></i>Partner</a></li>

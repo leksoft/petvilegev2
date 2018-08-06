@@ -49,4 +49,9 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Store','user_id');
     }
 
+     //deal
+     public function deal(){
+        return $this->hasOne('App\Models\Deal','user_id');
+    }
+
 }
