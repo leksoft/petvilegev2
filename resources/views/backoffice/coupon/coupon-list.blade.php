@@ -16,9 +16,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card-box">
-                    <h4 class="text-dark  header-title m-t-0">ดีลของคุณ</h4>
+                    <h4 class="text-dark  header-title m-t-0">คูปองของคุณ</h4>
                     <p class="text-muted m-b-25 font-13">
-                        แสดงดีลทั้งหมดที่คุณมี
+                        แสดงคูปองทั้งหมดที่คุณมี
                     </p>
 
                     <div class="table-responsive">
@@ -26,38 +26,38 @@
                             <thead>
                             <tr>
                                 <th>ลำดับ</th>
-                                <th>ชื่อดีล</th>
+                                <th>ชื่อคูปอง</th>
                                 <th>วันที่สร้าง</th>
-                                <th>สถานะดีล</th>
+                                <th>สถานะคูปอง</th>
                                 <th>จัดการ</th>
                                
                             </tr>
                             </thead>
                             <tbody>
-                                @if($deals->count() > 0)
-                                @foreach ($deals as $d)
+                                @if($coupons->count() > 0)
+                                @foreach ($coupons as $c)
                                 <tr>
-                                        <td>{{ $d->id }}</td>
-                                        <td>{{ $d->name }}</td>
-                                        <td>{{ $d->created_at}}</td>
+                                        <td>{{ $c->id }}</td>
+                                        <td>{{ $c->name }}</td>
+                                        <td>{{ $c->created_at}}</td>
                                         <td>
-                                            @if($d->status == 0)
+                                            @if($c->status == 0)
                                                 <span class="badge badge-info">ล้มเหลว</span>
-                                            @elseif($d->status == 1)
+                                            @elseif($c->status == 1)
                                                 <span class="badge badge-success">ล้มเหลว</span>
-                                            @elseif($d->status == 2)
+                                            @elseif($c->status == 2)
                                                 <span class="badge badge-warning">อยู่ในระหว่างดำเนินการ</span>
                                             @endif
                                             
                                         </td>
-                                        <td><a href = "">จัดการดีล</a></td>
+                                        <td><a href = "">จัดการคูปอง</a></td>
                                         
                                        
                                 </tr>
                                 @endforeach
                                 @else
                                 <tr>
-                                        <td colspan="5">คุณยังไม่ได้สร้างดีลแรก</td>
+                                        <td colspan="5">คุณยังไม่ได้สร้างคูปองแรก</td>
                                       
                                     </tr>
                                 @endif

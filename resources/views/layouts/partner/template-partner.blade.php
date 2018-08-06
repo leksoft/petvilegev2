@@ -153,12 +153,12 @@
                             </li>
 
                             <li class="has-submenu">
-                            <a href="{{ route('partner.new-deal') }}">จัดการดีล</a>
+                            <a href="{{ route('partner.deal-list') }}">จัดการดีล</a>
                                
                             </li>
 
                             <li class="has-submenu">
-                                <a href="{{ route('partner.new-coupon') }}">จัดการคูปอง</a>
+                                <a href="{{ route('partner.coupon-list') }}">จัดการคูปอง</a>
                                
                             </li>
 

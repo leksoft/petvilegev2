@@ -71,11 +71,15 @@ class DealsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function list()
     {
-        //
+        $deals = Deal::whereRaw('user_id = ? ',[Auth::id()])->get();
+        return view('backoffice.deal.deal-list',compact('deals'));
     }
 
+    public function show($id){
+        
+    }
     /**
      * Show the form for editing the specified resource.
      *

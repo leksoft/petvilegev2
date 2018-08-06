@@ -170,7 +170,7 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
     ]);
 
      //แสดงรายการดีล
-     Route::post('deal-list',[
+     Route::get('deal-list',[
         'uses' => 'DealsController@list',
         'as' => 'partner.deal-list'
     ]);
@@ -194,8 +194,8 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
     ]);
 
       //แสดงรายการคูปอง
-      Route::post('coupon-list',[
-        'uses' => 'DealsController@list',
+      Route::get('coupon-list',[
+        'uses' => 'CouponsController@list',
         'as' => 'partner.coupon-list'
     ]);
 
