@@ -175,8 +175,14 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
         'as' => 'partner.deal-list'
     ]);
 
-
-
+    //แก้ไขดีล
+    Route::get('edit-deal/{id}',[
+        'uses' => 'DealsController@edit',
+        'as' => 'partner.deal-edit'
+    ]);
+    
+    //Update Deal
+    Route::patch('deal/update/{id}','DealsController@update');
 
     /**
      * 

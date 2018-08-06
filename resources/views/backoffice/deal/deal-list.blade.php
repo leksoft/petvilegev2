@@ -50,7 +50,7 @@
                                             @endif
                                             
                                         </td>
-                                        <td><a href = "">จัดการดีล</a></td>
+                                    <td><a href = "{{ route('partner.deal-edit',['id'=> $d->id]) }}"><i class = "fa fa-pencil-square-o"></i> แก้ไข</a>  <a href = ""><i class = "fa fa-trash-o"></i> ลบ</a></td>
                                         
                                        
                                 </tr>

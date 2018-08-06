@@ -109,7 +109,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                     <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="{{ route('partner.account') }}" class="dropdown-item notify-item">
                                         <i class="mdi mdi-account"></i> <span>Profile</span>
                                     </a>
 
@@ -121,9 +121,16 @@
                         
 
                                     <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="mdi mdi-logout"></i> <span>Logout</span>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout"></i> <span>Logout</span>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                style="display: none;">
+                                            @csrf
+                                        </form>
+                                    
                                     </a>
+
                                 </div>
                             </li>
 

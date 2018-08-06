@@ -142,7 +142,7 @@
                                 <div class="form-group">
                                     <label for="name" class="col-sm-4 control-label">ชื่อที่ใช้แสดง</label>
                                     <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-lg" id="name"  name = "name" placeholder="ชื่อ - นามสกุล" value = "{{ $user->name }}">
+                                    <input type="text" class="form-control form-control-lg" id="name"  name = "name" placeholder="ชื่อที่ใช้แสดง" value = "{{ $user->name }}">
                                     </div>
                                 </div><!-- end form-group -->
                                 <div class="form-group {{ $errors->has('firstname') ? ' has-error' : '' }}">
