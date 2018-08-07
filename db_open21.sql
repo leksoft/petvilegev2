@@ -11,7 +11,7 @@
  Target Server Version : 50638
  File Encoding         : 65001
 
- Date: 06/08/2018 11:33:34
+ Date: 07/08/2018 07:24:01
 */
 
 SET NAMES utf8mb4;
@@ -78,14 +78,14 @@ CREATE TABLE `coupons` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of coupons
 -- ----------------------------
 BEGIN;
-INSERT INTO `coupons` VALUES (1, 15, 1, 1, '444', '5555', '555', NULL, '2561-08-06', '2561-08-06', '2561-08-06', NULL, NULL, NULL, NULL, '2018-08-06 04:10:32', '2018-08-06 04:10:32');
-INSERT INTO `coupons` VALUES (2, 15, 1, 1, 'อุเทนหงวนวันเวย์อุปนายิกา โปลิศออร์แกนิกเทปเวิร์ก', 'อุเทนหงวนวันเวย์อุปนายิกา โปลิศออร์แกนิกเทปเวิร์ก เฟรมแคมป์ แคร็กเกอร์โอเคโหลยโท่ยเวิร์กช็อป คอนแทคอ่อนด้อย﻿กรรมาชนมาร์ช โพสต์ สุริยยาตรเก๊ะพรีเซ็นเตอร์ เจ๊ดีไซน์ รูบิคแตงโมอ่อนด้อย ออยล์สไตรค์ โต๊ะจีนซูเปอร์โหลยโท่ยคอร์รัปชันราชานุญาต คอนแทคฮอตพล็อตซิงอีสเตอร์ ครัวซอง ถูกต้องราสเบอร์รีกุนซือลิมิตหลวงพี่ อุปนายิกาแจมลีกคาสิโนเสือโคร่ง สุริยยาตร์พรีเมียร์ซูโม่', 'อุเทนหงวนวันเวย์อุปนายิกา โปลิศออร์แกนิกเทปเวิร์ก เฟรมแคมป์ แคร็กเกอร์โอเคโหลยโท่ยเวิร์กช็อป คอนแทคอ่อนด้อย﻿กรรมาชนมาร์ช โพสต์ สุริยยาตรเก๊ะพรีเซ็นเตอร์ เจ๊ดีไซน์ รูบิคแตงโมอ่อนด้อย ออยล์สไตรค์ โต๊ะจีนซูเปอร์โหลยโท่ยคอร์รัปชันราชานุญาต คอนแทคฮอตพล็อตซิงอีสเตอร์ ครัวซอง ถูกต้องราสเบอร์รีกุนซือลิมิตหลวงพี่ อุปนายิกาแจมลีกคาสิโนเสือโคร่ง สุริยยาตร์พรีเมียร์ซูโม่', NULL, '2561-08-06', '2561-08-06', '2561-08-06', NULL, NULL, NULL, NULL, '2018-08-06 04:11:44', '2018-08-06 04:11:44');
+INSERT INTO `coupons` VALUES (3, 15, 1, 1, 'Lorem Ipsum is simply dummy text', 'Lorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy text', 'Lorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy text', NULL, '2561-08-06', '2561-08-06', '2561-08-06', NULL, NULL, NULL, NULL, '2018-08-06 16:20:43', '2018-08-06 16:20:43');
+INSERT INTO `coupons` VALUES (4, 15, 1, 1, 'Lorem Ipsum is simply dummy text', 'Lorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy text', 'Lorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy text', NULL, '2561-08-06', '2561-08-06', '2561-08-06', NULL, NULL, NULL, NULL, '2018-08-06 16:21:01', '2018-08-06 16:21:01');
 COMMIT;
 
 -- ----------------------------
@@ -114,15 +114,16 @@ CREATE TABLE `deals` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of deals
 -- ----------------------------
 BEGIN;
-INSERT INTO `deals` VALUES (2, 15, 1, 1, 'ddd', 'dddd', 'dddd', 32, '2561-08-06', '2561-08-06', '2561-08-06', 3, 3, 3, 3, '3', NULL, NULL, '2018-08-06 04:04:46', '2018-08-06 04:04:46');
-INSERT INTO `deals` VALUES (3, 15, 1, 2, 'ถถ', 'ถถถ', 'ถถถ', NULL, '2561-08-06', '2561-08-06', '2561-08-06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-08-06 04:08:10', '2018-08-06 04:08:10');
+INSERT INTO `deals` VALUES (3, 15, 1, 3, 'Lorem Ipsum is simply dummy text', 'Lorem Ipsum is simply dummy textLorem Ipsum is simply dummy text', NULL, 32, '2561-08-06', '2561-08-06', '2561-08-06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-08-06 23:50:48', '2018-08-06 16:50:48');
 INSERT INTO `deals` VALUES (4, 15, 1, 2, 'อุเทนหงวนวันเวย์อุปนายิกา', 'อุเทนหงวนวันเวย์อุปนายิกา โปลิศออร์แกนิกเทปเวิร์ก เฟรมแคมป์ แคร็กเกอร์โอเคโหลยโท่ยเวิร์กช็อป คอนแทคอ่อนด้อย﻿กรรมาชนมาร์ช โพสต์ สุริยยาตรเก๊ะพรีเซ็นเตอร์ เจ๊ดีไซน์ รูบิคแตงโมอ่อนด้อย ออยล์สไตรค์ โต๊ะจีนซูเปอร์โหลยโท่ยคอร์รัปชันราชานุญาต คอนแทคฮอตพล็อตซิงอีสเตอร์ ครัวซอง ถูกต้องราสเบอร์รีกุนซือลิมิตหลวงพี่ อุปนายิกาแจมลีกคาสิโนเสือโคร่ง สุริยยาตร์พรีเมียร์ซูโม่', 'อุเทนหงวนวันเวย์อุปนายิกา', 3, '2561-08-06', '2561-08-06', '2561-08-06', 4, 4, 4, 43, 'อุเทนหงวนวันเวย์อุปนายิกา', NULL, NULL, '2018-08-06 04:12:09', '2018-08-06 04:12:09');
+INSERT INTO `deals` VALUES (5, 15, 1, 1, 'คลาสสิกจิตเภทนินจาซาร์ดีน', 'คลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีนคลาสสิกจิตเภทนินจาซาร์ดีน', NULL, 45, '2561-08-06', '2561-08-06', '2561-08-06', 4, 4, 3456, 3454, '..', NULL, NULL, '2018-08-06 23:50:26', '2018-08-06 16:50:26');
+INSERT INTO `deals` VALUES (6, 15, 0, 0, 'Lorem Ipsum is simply dummy text', 'Lorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy text', 'Lorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy textLorem Ipsum is simply dummy text', 433, '2561-08-06', '2561-08-06', '2561-08-06', 4, 4, 4, 43, '4', NULL, NULL, '2018-08-06 16:20:12', '2018-08-06 16:20:12');
 COMMIT;
 
 -- ----------------------------
@@ -297,7 +298,7 @@ BEGIN;
 INSERT INTO `users` VALUES (1, 1, NULL, 'open21', 'open21', 'open21@gmail.com', NULL, NULL, '$2y$10$WPodPI90NXlYhCCbNuU8C.bjSbwXRqZvBEoXkfBDjUBoft5bXazG2', 1, NULL, NULL, 0, 'aKpQndDr8GvsFbHJhnlh5IiDfJqm5lavTLCBJt9YOtc76rFBETVmRjVJc872', '2018-06-25 14:10:13', '2018-06-25 14:10:13');
 INSERT INTO `users` VALUES (2, 1, NULL, 'นครินทร์ ม่วงอ่อน', NULL, 'leksofty@gmail.com', NULL, NULL, '$2y$10$V4U70cpcausstiuzG5e/bOTfpRoxXC37bBSD1RlUsqICI7Jmkh2RG', 2, NULL, NULL, 0, '7CsBbI1grGt8ph6a3w7eFkdabVXfaDQDmiqXlxlCxjAMmMXwPXMQRmBazikJ', '2018-07-07 05:10:00', '2018-07-07 05:10:00');
 INSERT INTO `users` VALUES (14, 1, NULL, 'กมลวรรณ นาดี', NULL, 'ka@gmail.com', NULL, NULL, '$2y$10$3.SSPbRECeLxf7PgQ.t1O.3n7RTb5SPJuR5YWW20d/2QGEKz4bLqu', 2, NULL, NULL, 0, 'yQ0mnDTuOBjF4pnhMLVcN934L6WeTI6BA27nNJJy6U9IiKKAAqm1AFgAt4v7', '2018-07-07 09:50:44', '2018-07-07 11:13:48');
-INSERT INTO `users` VALUES (15, 1, NULL, 'Leksoft Feif', NULL, 'mana@rmu.ac.th', NULL, NULL, '$2y$10$El4x2T/N0omwFsu6ocUcBuTnR/rVT67Y3gF0ERb4fT/iT2mcIpiEC', 3, '', '', 2, 'wyYgolDyi0cSTvhZBeCGVIzdiIxBQL90GN7bM3KCTIFEK0t1whcCmPvaWx06', '2018-07-29 04:12:22', '2018-08-04 05:46:43');
+INSERT INTO `users` VALUES (15, 1, NULL, 'Leksoft Feif', NULL, 'mana@rmu.ac.th', NULL, NULL, '$2y$10$El4x2T/N0omwFsu6ocUcBuTnR/rVT67Y3gF0ERb4fT/iT2mcIpiEC', 3, '', '', 2, 'VjSfRkBVLqg3Dox2c71snhnNSOUiBwQn7HOoBTixSrFgHup9t2ThLhy9THUu', '2018-07-29 04:12:22', '2018-08-04 05:46:43');
 INSERT INTO `users` VALUES (17, 1, 'อีสานเดฟ', NULL, NULL, 'none@gmail.com', NULL, NULL, '$2y$10$fH5AGh7Q4zsxIymP1FH/GObd9fGsbf77Oc7dCvy3NAh83jpFL9kI6', 3, NULL, NULL, 0, NULL, '2018-08-03 21:11:40', '2018-08-03 21:11:40');
 COMMIT;
 
