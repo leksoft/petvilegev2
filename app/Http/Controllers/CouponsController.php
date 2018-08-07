@@ -125,6 +125,11 @@ class CouponsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $coupon = Coupon::findOrFail($id);
+        $coupon->delete();
+       
+        Session::flash('success','ลบรายการเรียบร้อยแล้ว');
+        return redirect()->route('partner.coupon-list');
+
     }
 }

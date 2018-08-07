@@ -183,6 +183,12 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
     
     //Update Deal
     Route::patch('deal/update/{id}','DealsController@update');
+    //Destroy
+    Route::get('destroy-deal/{id}',[
+        'uses' => 'DealsController@destroy',
+        'as' => 'partner.deal-destroy'
+    ]);
+
 
     /**
      * 
@@ -205,16 +211,20 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
         'as' => 'partner.coupon-list'
     ]);
 
-      //แก้ไขคูปอง
-      Route::get('edit-coupon/{id}',[
+    //แก้ไขคูปอง
+    Route::get('edit-coupon/{id}',[
         'uses' => 'CouponsController@edit',
         'as' => 'partner.coupon-edit'
     ]);
     
     //Update Coupon
     Route::patch('coupon/update/{id}','CouponsController@update');
-
-
+    //Destroy
+    Route::get('destroy-coupon/{id}',[
+        'uses' => 'CouponsController@destroy',
+        'as' => 'partner.coupon-destroy'
+    ]);
+   
 });
 
 Route::group(['prefix'=>'member','middleware'=>'auth'],function(){

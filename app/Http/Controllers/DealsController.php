@@ -134,6 +134,11 @@ class DealsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deal = Deal::findOrFail($id);
+        $deal->delete();
+       
+        Session::flash('success','ลบรายการเรียบร้อยแล้ว');
+        return redirect()->route('partner.deal-list');
+
     }
 }

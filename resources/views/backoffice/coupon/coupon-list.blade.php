@@ -7,7 +7,11 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                   
+                    @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                            {{ Session::get('success') }}
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -50,29 +54,24 @@
                                             @endif
                                             
                                         </td>
-                                        <td><a href = "{{ route('partner.coupon-edit',['id'=> $c->id]) }}"><i class = "fa fa-pencil-square-o"></i> แก้ไข</a>  <a href = ""><i class = "fa fa-trash-o"></i> ลบ</a></td>
+                                        <td><a href = "{{ route('partner.coupon-edit',['id'=> $c->id]) }}"><i class = "fa fa-pencil-square-o"></i> แก้ไข</a>  <a href = "{{ route('partner.coupon-destroy',['id'=> $c->id]) }}" class ="" onclick="return confirm('ยันยืนการลบรายการนี้หรือไม่?')"><i class="fa fa-trash-o"></i> ลบ</a></td>
+                                        
                                         
                                        
+                                    </td>
+                            </tr>
+                            @endforeach
+                            @else
+                            <tr>
+                                    <td colspan="5">คุณยังไม่ได้สร้างคูปองแรก</td>
+                                  
                                 </tr>
-                                @endforeach
-                                @else
-                                <tr>
-                                        <td colspan="5">คุณยังไม่ได้สร้างคูปองแรก</td>
-                                      
-                                    </tr>
-                                @endif
-                            
-                            
-                            </tbody>
-                        </table>
+                            @endif
+                            </table>
                     </div>
                 </div>
             </div>
-            <!-- end col -8 -->
-
         </div>
-        <!-- end row -->
-
-    </div> <!-- end container -->
+    </div>
 </div>
 @stop

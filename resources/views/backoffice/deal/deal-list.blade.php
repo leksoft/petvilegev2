@@ -7,7 +7,11 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                   
+                    @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                            {{ Session::get('success') }}
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -50,7 +54,7 @@
                                             @endif
                                             
                                         </td>
-                                    <td><a href = "{{ route('partner.deal-edit',['id'=> $d->id]) }}"><i class = "fa fa-pencil-square-o"></i> แก้ไข</a>  <a href = ""><i class = "fa fa-trash-o"></i> ลบ</a></td>
+                                    <td><a href = "{{ route('partner.deal-edit',['id'=> $d->id]) }}"><i class = "fa fa-pencil-square-o"></i> แก้ไข</a>  <a href = "{{ route('partner.deal-destroy',['id'=> $d->id]) }}" class ="" onclick="return confirm('ยันยืนการลบรายการนี้หรือไม่?')"><i class="fa fa-trash-o"></i> ลบ</a></td>
                                         
                                        
                                 </tr>
