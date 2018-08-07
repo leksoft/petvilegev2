@@ -58,7 +58,6 @@ class MembersController extends Controller
             $profiles->address = $request->address;
             $profiles->mailaddress = $request->mailaddress;
             $profiles->phone = $request->phone;
-            $profiles->avatar = $request->avatar;
             $profiles->wallet = $request->wallet;
             $profiles->point = $request->point;
             $profiles->referral = $request->referral;
@@ -166,7 +165,6 @@ class MembersController extends Controller
             $profiles->address = $request->address;
             $profiles->mailaddress = $request->mailaddress;
             $profiles->phone = $request->phone;
-            $profiles->avatar = $request->avatar;
             $profiles->wallet = $request->wallet;
             $profiles->point = $request->point;
             $profiles->referral = $request->referral;

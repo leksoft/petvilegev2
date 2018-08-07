@@ -38,7 +38,7 @@ body {
       .content .title-header .form-horizontal div[class^="col-"] {
         padding-right: 0; } }
 
-/*fullscreen*/
+/*fullscreen      border-right: 1px solid #b4b6b7;   */
 .fullscreen {
   display: table;
   width: 100%;
@@ -48,12 +48,29 @@ body {
 .section.fullscreen {
   padding: 0px; }
 
+  /* Menu icon Middle */
+  .icon-menu-middle{
+    margin: 0px;
+    text-align: center;
+    padding: 0px 42px 0px 42px;
+
+  }
+  .icon-menu-middle img{
+    width: 42px;
+    height: 42px;
+  }
+  .text-menu-middle {
+    font-size: 15px;
+    text-align: center;
+  }
+
 /*middle*/
 .middle {
   position: relative;
   display: table-cell;
   vertical-align: middle;
-  padding: 70px 0; }
+  padding: 70px 0; 
+}
 
 /*vertical aligns*/
 @media (min-width: 767px) {
@@ -280,6 +297,14 @@ body {
   .column-3 div[class^="col-"]:nth-child(2n+1) {
     clear: left; } }
 
+    /**
+      Login Top Menu 
+    */
+    .login-top-menu{
+      border:solid;
+      border-radius:0.3rem;
+      color : #ffffff;
+    }
 /*===================
 ====top header=======
 ===================*/
@@ -535,6 +560,7 @@ body {
     left: 0;
     right: 0; }
   .yamm .navbar-nav > li {
+    border-right: 1px solid #cecfcf;
     margin: 0 2px; }
     .yamm .navbar-nav > li > a {
       color: #35404f;
@@ -544,12 +570,14 @@ body {
           border-top: 2px solid transparent; } }
       @media (min-width: 767px) {
         .yamm .navbar-nav > li > a:hover {
-          border-top: 2px solid #007775; } }
+          color:#007775; } }
       @media (min-width: 767px) {
         .yamm .navbar-nav > li > a {
-          padding-top: 10px;
-          padding-bottom: 10px;
-          line-height: 50px; } }
+          padding-top: 2px;
+          padding-bottom: 4px;
+         
+        }}
+          /* line-height: 25px; } } */
     .yamm .navbar-nav > li.active > a {
       background-color: transparent;
       color: #35404f;

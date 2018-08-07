@@ -121,7 +121,7 @@
                                
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button class="btn btn-default round btn-md" type="submit"><i class="fa fa-user mr-5"></i> แก้ไข</button>
+                                        <button class="btn btn-default round btn-md" type="submit"><i class="fa fa-user mr-5"></i> บันทึกข้อมูลd</button>
                                     </div>
                                 </div><!-- end form-group -->
                             </form>

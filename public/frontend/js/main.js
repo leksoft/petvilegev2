@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
     //sticky nav
-    $(".navbar").sticky({topSpacing:0});
+    // $(".navbar").sticky({topSpacing:0});
     
     // yamm menu
     $(document).on('click', '.yamm .dropdown-menu', function(e) {
@@ -160,7 +160,7 @@ $(document).ready(function(){
     }
     
     //back to top
-    $('body').append('<a href="javascript:void(0);" id="back-to-top"><i class="fa fa-angle-up"></i></a>');
+    // $('body').append('<a href="javascript:void(0);" id="back-to-top">Back to top</a>');
     
     $(window).scroll(function() {
         if ($(this).scrollTop() >= 200) {

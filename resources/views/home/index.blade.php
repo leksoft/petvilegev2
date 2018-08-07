@@ -9,7 +9,7 @@
                         <div class="slider-content">
                            
                             <div class="box text-right fa">
-                                <img src="{{ asset('frontend/img/banners/phpunit.jpg') }}" alt="" class="img-fluid"/>
+                                <img src="{{ asset('frontend/img/banners/slideshow.png') }}" alt="" class="img-fluid"/>
                             </div>
                         </div><!-- end slider-content -->
                     </div><!-- end swiper-slider -->
@@ -17,7 +17,7 @@
                         <div class="slider-content">
                           
                             <div class="box text-right fa">
-                                    <img src="{{ asset('frontend/img/banners/phpunit.jpg') }}" alt="" />
+                                    <img src="{{ asset('frontend/img/banners/slideshow.png') }}" alt="" />
                             </div>
                         </div><!-- end slider-content -->
                     </div><!-- end swiper-slider -->

@@ -1,3 +1,19 @@
+<!-- start section -->
+
+{{-- <section class="info-background">
+    <div class="container">
+        <div class="box-banner-wide info-background">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                   
+                    <h5>กลับขึ้นด้านบน</h5>
+              
+                </div><!-- end col -->   
+            </div><!-- end row -->
+        </div><!-- end box-banner-wide -->
+    </div><!-- end container -->
+</section> --}}
+<!-- end section -->
 <footer class="footer light">
         <div class="container">
             <div class="row">
@@ -38,12 +54,5 @@
                 </div><!-- end col -->
             </div><!-- end row -->
             
-            <hr class="spacer-30">
-            
-            <div class="row text-center">
-                <div class="col-sm-12">
-                    <p class="text-sm">&COPY; Copyright 2018 Open 21 Co.,Ltd.</p>
-                </div><!-- end col -->
-            </div><!-- end row -->
         </div><!-- end container -->
     </footer>

@@ -70,9 +70,8 @@
                 @guest
 
                 <div class="">
-                    <a href="javascript:void(0);" data-toggle="modal" data-target=".loginModal">
+                    <a href="javascript:void(0);" data-toggle="modal" data-target=".loginModal"  class="btn btn-info-outline btn-md login-top-menu"
                         <i class="fa fa-sign-in"></i> เข้าระบบ
-
                     </a>
                 </div>
 
@@ -81,8 +80,7 @@
 
                     <ul class="nav navbar-nav">
                         <!-- Home -->
-                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i
-                                        class="glyphicon glyphicon-shopping-cart"></i> cart</a>
+                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">ตะกร้าสินค้า</a>
                             <ul role="menu" class="dropdown-menu">
                                 <li><a href="">cart</a></li>
                                 <li><a href="">cart</a></li>
@@ -92,8 +90,7 @@
 
                     <ul class="nav navbar-nav">
                         <!-- Home -->
-                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i
-                                        class="glyphicon glyphicon-bell"></i> Noti</a>
+                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">การแจ้งเตือน</a>
                             <ul role="menu" class="dropdown-menu">
                                 <li><a href="">cart</a></li>
                                 <li><a href="">cart</a></li>
@@ -103,8 +100,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li class="dropdown">
-                            <a href="{{ route('members.my-account') }}"><i
-                                        class="glyphicon glyphicon-user"></i> {{ Auth::user()->name }}</a>
+                            <a href="{{ route('members.my-account') }}">{{ Auth::user()->name }}</a>
                             <ul role="menu" class="dropdown-menu">
                                 <li><a href="">cart</a></li>
                                 <li>
@@ -145,14 +141,14 @@
         <div id="navbar-collapse-3" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <!-- Home -->
-                <li><a href="index.html">รักษาสัตว์</a></li>
-                <li><a href="index.html">กรูมมิ่ง</a></li>
-                <li><a href="index.html">รักฝากสัตว์</a></li>
-                <li><a href="index.html">กิจกรรมสัตว์</a></li>
-                <li><a href="index.html">สินค้า</a></li>
-                <li><a href="index.html">บริการอื่นๆ</a></li>
-                <li><a href="index.html">ฟาร์ม</a></li>
-                <li><a href="index.html">ไลฟ์สไตล์</a></li>
+                <li><a href="index.html"><div class="icon-menu-middle"><img src = "{{ asset('frontend/img/categoryicon/01-vet.png') }}"></div><div class = "text-menu-middle">รักษาสัตว์</div></a></li>
+                <li><a href="index.html"><div class="icon-menu-middle"><img src = "{{ asset('frontend/img/categoryicon/02-grooming.png') }}"></div><div class = "text-menu-middle">กรูมมิ่ง</a></li>
+                <li><a href="index.html"><div class="icon-menu-middle"><img src = "{{ asset('frontend/img/categoryicon/03-petHotel.png') }}"></div><div class = "text-menu-middle">รักฝากสัตว์</a></li>
+                <li><a href="index.html"><div class="icon-menu-middle"><img src = "{{ asset('frontend/img/categoryicon/04-activities.png') }}"></div><div class = "text-menu-middle">กิจกรรมสัตว์</a></li>
+                <li><a href="index.html"><div class="icon-menu-middle"><img src = "{{ asset('frontend/img/categoryicon/05-product.png') }}"></div><div class = "text-menu-middle">สินค้า</a></li>
+                <li><a href="index.html"><div class="icon-menu-middle"><img src = "{{ asset('frontend/img/categoryicon/06-services.png') }}"></div><div class = "text-menu-middle">บริการอื่นๆ</a></li>
+                <li><a href="index.html"><div class="icon-menu-middle"><img src = "{{ asset('frontend/img/categoryicon/07-farm.png') }}"></div><div class = "text-menu-middle">ฟาร์ม</a></li>
+                <li><a href="index.html"><div class="icon-menu-middle"><img src = "{{ asset('frontend/img/categoryicon/08-lifestyle.png') }}"></div><div class = "text-menu-middle">ไลฟ์สไตล์</a></li>
 
 
             </ul><!-- end navbar-nav -->
