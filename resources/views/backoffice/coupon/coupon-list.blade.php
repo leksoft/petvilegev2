@@ -50,7 +50,7 @@
                                             @endif
                                             
                                         </td>
-                                        <td><a href = "">จัดการคูปอง</a></td>
+                                        <td><a href = "{{ route('partner.coupon-edit',['id'=> $c->id]) }}"><i class = "fa fa-pencil-square-o"></i> แก้ไข</a>  <a href = ""><i class = "fa fa-trash-o"></i> ลบ</a></td>
                                         
                                        
                                 </tr>

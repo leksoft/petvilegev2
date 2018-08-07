@@ -205,6 +205,16 @@ Route::group(['prefix'=>'partner','middleware'=>'auth'],function(){
         'as' => 'partner.coupon-list'
     ]);
 
+      //แก้ไขคูปอง
+      Route::get('edit-coupon/{id}',[
+        'uses' => 'CouponsController@edit',
+        'as' => 'partner.coupon-edit'
+    ]);
+    
+    //Update Coupon
+    Route::patch('coupon/update/{id}','CouponsController@update');
+
+
 });
 
 Route::group(['prefix'=>'member','middleware'=>'auth'],function(){

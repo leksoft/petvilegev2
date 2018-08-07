@@ -84,7 +84,10 @@ class CouponsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $coupon = Coupon::findOrFail($id);
+        $stores = Store::whereRaw('user_id',Auth::id())->get();
+        $categories = Category::all();
+        return view('backoffice.coupon.coupon-edit',compact('coupon','stores','categories'));
     }
 
     /**
@@ -96,7 +99,22 @@ class CouponsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $coupon =  Coupon::findOrFail($id);
+        $coupon->user_id = Auth::id();
+        $coupon->store_id = $request->store_id ; 
+        $coupon->category_id = $request->category_id;
+        $coupon->name = $request->name; 
+        $coupon->detail = $request->detail;
+        $coupon->termsofuse = $request->termsofuse;
+        $coupon->sale_date_start = $request->sale_date_start;
+        $coupon->sale_date_stop = $request->sale_date_stop;
+        $coupon->expired_date  = $request->expired_date;
+        $coupon->count_coupon_sale = $request->count_coupon_sale;
+        $coupon->status = NULL;
+        $coupon->save();
+        
+        Session::flash('success','แก้ไขคูปองสำเร็จ !!!');
+        return redirect()->back();
     }
 
     /**
