@@ -40,7 +40,7 @@
             <div class="col-sm-12">
                 <figure>
                     <a href="category.html">
-                        <img src="{{ asset('frontend/img/banners/top_banner.jpg') }}" alt=""/>
+                        <img src="{{ asset('frontend/img/banners/topBanner.png') }}" alt=""/>
                     </a>
                 </figure>
             </div><!-- end col -->
@@ -53,14 +53,14 @@
         <div class="row display-table">
             <div class="col-sm-3 vertical-align text-left hidden-xs">
                 <a href="{{ url('homepage') }}">
-                    <img width="160" src="{{ asset('frontend/img/PETVILEGE_Logo.png') }}" alt=""/>
+                    <img width="94px" height="45px" src="{{ asset('frontend/img/PETVILEGE_Logo.png') }}" alt=""/>
                 </a>
             </div><!-- end col -->
             <div class="col-sm-6 vertical-align text-center">
                 <form>
                     <div class="row grid-space-1">
                         <div class="col-sm-12">
-                            <input type="text" name="keyword" class="form-control input-lg" placeholder="Search">
+                            <input type="text" name="keyword" class="form-control input-lg" placeholder="ค้นหาสถานที่ ดีล คูปอง และอื่น ๆ" style="border: none;border-radius : 0.3rem;">
                         </div><!-- end col -->
 
                     </div><!-- end row -->

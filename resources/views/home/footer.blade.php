@@ -3,52 +3,38 @@
             <div class="row">
                 <div class="col-sm-3">
                     <h5 class="title">Petvilege</h5>
-                    <p>ความตั้งใจหลักของ Petvilege.com คือการให้ทุกคนมีส่วนร่วมในการแสดงความคิดเห็นเกี่ยวกับบริการด้านสัตว์เลี้ยง และลดค่าใช้จ่ายในการดูแลสัตว์เลี้ยงให้ถูกลง</p>
-                    
-                    <hr class="spacer-10 no-border">
-                    
-                    <ul class="social-icons">
-                        <li class="facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                        <li class="twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                        <li class="dribbble"><a href="javascript:void(0);"><i class="fa fa-dribbble"></i></a></li>
-                        <li class="linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                        <li class="youtube"><a href="javascript:void(0);"><i class="fa fa-youtube"></i></a></li>
-                        <li class="behance"><a href="javascript:void(0);"><i class="fa fa-behance"></i></a></li>
+                    <ul class="list alt-list">
+                        <li><a href="about.html"><i class="fa fa-angle-right"></i>เกี่ยวกับเรา</a></li>
+                        <li><a href="url.html"><i class="fa fa-angle-right"></i>เงือนไขการให้บริการ</a></li>
+                        <li><a href="url.html"><i class="fa fa-angle-right"></i>ความเป็นส่วนตัว</a></li>
+                       
                     </ul>
                 </div><!-- end col -->
                 <div class="col-sm-3">
-                    <h5 class="title">My Account</h5>
+                    <h5 class="title">การบริการ</h5>
                     <ul class="list alt-list">
-                        <li><a href="my-account.html"><i class="fa fa-angle-right"></i>My Account</a></li>
-                        <li><a href="wishlist.html"><i class="fa fa-angle-right"></i>Wishlist</a></li>
-                        <li><a href="cart.html"><i class="fa fa-angle-right"></i>My Cart</a></li>
+                        <li><a href="fag.html"><i class="fa fa-angle-right"></i>คำถามที่พบบ่อย</a></li>
+                        <li><a href="url.html"><i class="fa fa-angle-right"></i>ศูนย์การช่วยเหลือ</a></li>
+                        
                         @guest
-                            <li><a href="{{ route('partners') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
+                            <li><a href="{{ route('partners') }}"><i class="fa fa-angle-right"></i>ร่วมเป็นพาร์ทเนอร์</a></li>
                         @else
                             @if(Auth::user()->role_id == 3)
-                            <li><a href="{{ route('partner.main') }}"><i class="fa fa-angle-right"></i>Partner</a></li>
+                            <li><a href="{{ route('partner.main') }}"><i class="fa fa-angle-right"></i>ร่วมเป็นพาร์ทเนอร์</a></li>
                             @endif
                         @endif
                     </ul>
                 </div><!-- end col -->
                 <div class="col-sm-3">
-                    <h5 class="title">Information</h5>
+                    <h5 class="title">คอมมูนิตี้</h5>
                     <ul class="list alt-list">
-                        <li><a href="about-us"><i class="fa fa-angle-right"></i>About Us</a></li>
-                        <li><a href="faq.html"><i class="fa fa-angle-right"></i>FAQ</a></li>
-                        <li><a href="privacy-policy.html"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
-                        <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact Us</a></li>
+                        <li><a href="url.html"><i class="fa fa-angle-right"></i>Facebook</a></li>
+                        <li><a href="url.html"><i class="fa fa-angle-right"></i>กิจกรรมและข่าวสาร</a></li>
+                        <li><a href="url.html"><i class="fa fa-angle-right"></i>สาระสัตว์เลี้ยง</a></li>
                     </ul>
                 </div><!-- end col -->
                 <div class="col-sm-3">
-                    <h5 class="title">Payment Methods</h5>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <ul class="list list-inline">
-                        <li class="text-dark"><i class="fa fa-cc-visa fa-2x"></i></li>
-                        <li class="text-dark"><i class="fa fa-cc-paypal fa-2x"></i></li>
-                        <li class="text-dark"><i class="fa fa-cc-mastercard fa-2x"></i></li>
-                        <li class="text-dark"><i class="fa fa-cc-discover fa-2x"></i></li>
-                    </ul>
+                    LOGO Petvilege
                 </div><!-- end col -->
             </div><!-- end row -->
             
