@@ -69,8 +69,8 @@
             <div class="col-sm-3 vertical-align header-items hidden-xs">
                 @guest
 
-                <div class="">
-                    <a href="javascript:void(0);" data-toggle="modal" data-target=".loginModal"  class="btn btn-info-outline btn-md login-top-menu"
+                <div class="login-top-menu">
+                    <a href="javascript:void(0);" data-toggle="modal" data-target=".loginModal"  class="btn btn-info-outline btn-md"
                         <i class="fa fa-sign-in"></i> เข้าระบบ
                     </a>
                 </div>
