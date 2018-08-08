@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\PartnerProfileRequest;
+use App\Http\Requests\ProfileUpdateRequest;
 use App\User;
 use App\Models\Profile;
 use Session;
@@ -37,7 +38,7 @@ class MembersController extends Controller
         return view('home.member.edit-profile',compact('user'));
     }
 
-    public function updateprofile(Request $request, $id)
+    public function updateprofile(ProfileUpdateRequest $request, $id)
     {
         $user = User::findOrFail($id);
 

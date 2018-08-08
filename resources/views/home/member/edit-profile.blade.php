@@ -36,17 +36,13 @@
                        
                     </div><!-- end widget -->
 
-                    เชื่อมต่อ 
-                    <a href="javascript:void(0);" class="btn btn-facebook btn-md"><i class="fa fa-google-plus mr-10"></i>Facebook</a>
-                    <hr/>
-                    เชื่อมต่อ 
-                    <a href="javascript:void(0);" class="btn btn-google-plus btn-md"><i class="fa fa-google-plus mr-10"></i>Google Plus</a>
+                    
                 </div><!-- end col -->
                 <!-- end sidebar -->
                 <div class="col-sm-9">
                     <div class="row">
                         <div class="col-sm-12 text-left">
-                            <h2 class="title">แก้ไขข้อมูลส่วนตัว</h2>
+                            <h2 class="title">บัญชีผู้ใช้</h2>
                         </div><!-- end col -->
                     </div><!-- end row -->
                     
@@ -54,12 +50,39 @@
                     
                     <div class="row">
                         <div class="col-sm-12 col-md-10 col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-4 control-label">ชื่อ - นามสกุล</label>
+                          
+                                <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
+                                    <label for="name" class="col-sm-4 control-label">ชื่อ</label>
                                     <div class="col-sm-8">
-                                      <input type="text" class="form-control input-lg" id="name"  name = "name" placeholder="ชื่อ - นามสกุล" value = "{{ $user->name }}">
+                                      <input type="text" class="form-control input-lg" id="firstname"  name = "firstname" placeholder="ชื่อ" value = "{{ $user->profile->firstname }}">
+                                      @if ($errors->has('firstname'))
+                                        <span class="text-danger" role="alert">
+                                            {{ $errors->first('firstname') }}
+                                        </span>
+                                      @endif
                                     </div>
+                                </div><!-- end form-group -->
+                                <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                                        <label for="name" class="col-sm-4 control-label">นามสกุล</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control input-lg" id="lastname"  name = "lastname" placeholder="นามสกุล" value = "{{ $user->profile->lastname }}">
+                                          @if ($errors->has('lastname'))
+                                            <span class="text-danger" role="alert">
+                                                {{ $errors->first('lastname') }}
+                                            </span>
+                                          @endif
+                                        </div>
+                                </div><!-- end form-group -->
+                                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                        <label for="phone" class="col-sm-4 control-label">เบอร์โทรศัพท์ <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control input-lg" id="phone" name = "phone" placeholder="เบอร์โทรศัพท์มือถือ" value="{{ $user->profile->phone }}">
+                                          @if ($errors->has('phone'))
+                                          <span class="text-danger" role="alert">
+                                              {{ $errors->first('phone') }}
+                                          </span>
+                                        @endif
+                                        </div>
                                 </div><!-- end form-group -->
                                 <div class="form-group">
                                     <label for="email" class="col-sm-4 control-label">อีเมล <span class="text-danger">*</span></label>
@@ -109,22 +132,30 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                        <label for="phone" class="col-sm-4 control-label">เบอร์โทรศัพท์มือถือ <span class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                          <input type="text" class="form-control input-lg" id="phone" name = "phone" placeholder="เบอร์โทรศัพท์มือถือ" value="{{ $user->profile->phone }}">
-                                        </div>
-                                </div><!-- end form-group -->
-                                    
+                             
                             </div>
 
                                
                                 <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button class="btn btn-default round btn-md" type="submit"><i class="fa fa-user mr-5"></i> บันทึกข้อมูลd</button>
+                                        <label for="submit" class="col-sm-4 control-label"> </label>
+                                        <div class="col-sm-8">
+                                        <button class="btn btn-success round btn-md" type="submit">บันทึกข้อมูล</button>
                                     </div>
                                 </div><!-- end form-group -->
-                            </form>
+                                <div class="form-group">
+                                        <label for="socail" class="col-sm-4 control-label"></label>
+                                    <div class="col-sm-8">
+                                            <h6>การเชื่อมต่อบัญชี</h6>
+                                            เชื่อมต่อ 
+                                            <a href="javascript:void(0);" class="btn btn-facebook btn-md"><i class="fa fa-google-plus mr-10"></i>Facebook</a>
+                                            <hr/>
+                                            เชื่อมต่อ 
+                                            <a href="javascript:void(0);" class="btn btn-google-plus btn-md"><i class="fa fa-google-plus mr-10"></i>Google Plus</a>
+
+                                    </div>
+                                </div>
+                                
+                                    
                         </div><!-- end col -->
                     </div><!-- end row -->
                 </div><!-- end col -->
