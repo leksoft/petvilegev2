@@ -51,7 +51,7 @@
 <div class="middleBar" style="background-color: #18dcff;">
     <div class="container-fluid">
         <div class="row display-table">
-            <div class="col-sm-3 vertical-align text-left hidden-xs">
+            <div class="col-sm-2 vertical-align text-left hidden-xs">
                 <a href="{{ url('homepage') }}">
                     <img width="94px" height="45px" src="{{ asset('frontend/img/PETVILEGE_Logo.png') }}" alt=""/>
                 </a>
@@ -66,7 +66,7 @@
                     </div><!-- end row -->
                 </form>
             </div><!-- end col -->
-            <div class="col-sm-3 vertical-align header-items hidden-xs">
+            <div class="col-sm-4 vertical-align header-items hidden-xs">
                 @guest
 
                 <div class="login-top-menu">

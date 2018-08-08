@@ -3,7 +3,6 @@
     <div id="sidebar-menu">
         <ul>
             <li class="menu-title">Main</li>
-
             <li>
                 <a href="index.html" class="waves-effect waves-primary"><i
                             class="ti-home"></i><span> Dashboard </span></a>
@@ -71,8 +70,6 @@
 
                     </ul>
                 </li>
-
-
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect waves-primary"><i
                                 class="ti-map"></i><span> Maps </span><span class="menu-arrow"></span></a>
@@ -81,7 +78,6 @@
                         <li><a href="url.html"> Vector Map</a></li>
                     </ul>
                 </li>
-
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect waves-primary"><i
                                 class="ti-email"></i><span> Mail </span> <span class="menu-arrow"></span></a>
@@ -91,9 +87,7 @@
                         <li><a href="url.html">View Mail</a></li>
                     </ul>
                 </li>
-
                 <li class="menu-title">ตั้งค่าเว็บไซต์</li>
-
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect waves-primary"><i
                                 class="ti-files"></i><span> Pages </span> <span class="menu-arrow"></span></a>
@@ -108,7 +102,6 @@
                         <li><a href="url.html">Manage Footer</a></li>
                     </ul>
                 </li>
-
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect waves-primary"><i
                                 class="ti-settings"></i><span> ตั้งค่าระบบ </span> <span
@@ -119,9 +112,7 @@
                     </ul>
                 </li>
             @endif
-
         </ul>
-
         <div class="clearfix"></div>
     </div>
     <div class="clearfix"></div>

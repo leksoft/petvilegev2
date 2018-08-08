@@ -52,17 +52,19 @@ body {
   .icon-menu-middle{
     margin: 0px;
     text-align: center;
-    padding: 0px 75px 0px 75px;
+    padding: 0px 40px 0px 40px;
 
   }
   .icon-menu-middle img{
     width: 42px;
     height: 42px;
+
   }
   .text-menu-middle {
     font-size: 15px;
     text-align: center;
     padding-bottom: 6px;
+    padding-left: 6px;
   }
 
 
@@ -71,7 +73,7 @@ body {
   position: relative;
   display: table-cell;
   vertical-align: middle;
-  padding: 70px 0; 
+  padding: 70px 0;
 }
 
 /*vertical aligns*/
